@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ase_cli"
+authors = [
+    {name = "Moritz Gubler"},
+]
+description = "Command line interface for the for the atomistic simulation environment (ASE)"
+requires-python = ">=3.8"
+keywords = ["ase", "cli"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "numpy",
+    "ase"
+]
+dynamic = ["version"]
+
+[project.scripts]
+averagefile = "ase_cli.average_file:main"

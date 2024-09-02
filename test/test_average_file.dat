@@ -1,0 +1,8 @@
+1 1
+# comment 
+2 2 # another comment
+# empty lines should be skipped:
+
+3 3
+4 4
+
