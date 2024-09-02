@@ -40,4 +40,5 @@ def main():
     else:
         print(np.mean(data), np.std(data))
 
-
+if __name__ == "__main__":
+    main()
