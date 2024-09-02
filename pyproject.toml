@@ -21,3 +21,4 @@ dynamic = ["version"]
 
 [project.scripts]
 averagefile = "ase_cli.average_file:main"
+convert_ase_files = "ase_cli.convert_ase_files:main"
