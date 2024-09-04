@@ -10,9 +10,12 @@ def parse(subparser):
     parser.set_defaults(func=main)
 
 def main(args):
-    atoms = read(args.filename)
+    atoms = read(args.filename, index =':')
     args.filename.close()
-    atoms.repeat(args.repeats)
+    
+    for ats in atoms:
+        ats.repeat(args.repeats)
+
     if args.output is None:
         output = os.path.splitext(args.filename.name)[0] + "_supercell" + os.path.splitext(args.filename.name)[1]
     else:
