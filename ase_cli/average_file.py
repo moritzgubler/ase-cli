@@ -1,10 +1,9 @@
 import argparse
 import numpy as np
 
-def main():
-    parser = argparse.ArgumentParser(description='Prints the average and standard deviation of a column in a file.')
+def parse(subparser):
+    parser = subparser.add_parser("average", help='Prints the average and standard deviation of a column in a file.')
     parser.add_argument('filename', type=argparse.FileType('r'), help='The file to average.')
-
     parser.add_argument("--col", type=int, help="The column to average (first column has index 1), default 1", required = False, default = 1)
     parser.add_argument("--mean", action="store_true", help="Only print the mean", required = False, default = False)
     parser.add_argument("--std", action="store_true", help="Only print the standard deviation", required = False, default = False)
@@ -12,9 +11,10 @@ def main():
     parser.add_argument("--row", type=int, help="The line to average (first row has index 1), default 1", required = False, default = 1)
     parser.add_argument("--comment", type=str, help="The comment character, default #", required = False, default = "#")
     parser.add_argument("--skip", type=int, help="The number of entries to skip, default 0", required = False, default = 0)
+    parser.set_defaults(func=main)
 
+def main(args):
 
-    args = parser.parse_args()
     lines = args.filename.readlines()
     args.filename.close()
     if args.row_wise:
