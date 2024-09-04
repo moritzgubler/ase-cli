@@ -39,6 +39,3 @@ def main(args):
         print(np.std(data))
     else:
         print(np.mean(data), np.std(data))
-
-if __name__ == "__main__":
-    main()

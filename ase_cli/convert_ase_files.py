@@ -25,6 +25,3 @@ def main(args):
         atoms = read(f, index=args.index, format=args.input_format)
         f.close()
         write(out, atoms, format=args.format)
-
-if __name__ == "__main__":
-    main()
