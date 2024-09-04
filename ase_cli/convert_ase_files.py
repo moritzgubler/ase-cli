@@ -15,13 +15,16 @@ def parse(subparser):
 def main(args):
     
     if args.output is not None and len(args.input) > 1:
-        raise ValueError("Specifying utput file only makes sense if only one input file is provided.")
+        raise ValueError("Specifying output file only makes sense if only one input file is provided.")
     
     for i, f in enumerate(args.input):
         if args.output is not None:
             out = args.output
         else:
             out = basename(f.name) + "." + args.format
-        atoms = read(f, index=args.index, format=args.input_format)
+        if len(args.input) > 0:
+            atoms = read(f, index=args.index, format=args.input_format)
+        else:
+            atoms = read(f, index = args.index)
         f.close()
         write(out, atoms, format=args.format)
