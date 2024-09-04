@@ -1,7 +1,7 @@
 import argparse
 import ase_cli.average_file
 import ase_cli.convert_ase_files
-import sys
+
 def main():
 
     parser = argparse.ArgumentParser(description='ASE Command Line Interface')
