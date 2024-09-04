@@ -8,7 +8,7 @@ def parse(subparser):
     parser.add_argument('input', type=argparse.FileType('r'), nargs="+", help='The file(s) to convert.')
     parser.add_argument('--output', type=str, help='The output file. Only makes sense if only one input file is provided', required=False)
     parser.add_argument("--input_format", type=str, help="The input format. Default: ase will choose format based on ending", required = False, default = "")
-    parser.add_argument("--index", type=str, help="The index of the file to convert, default 0", required = False, default = "0")
+    parser.add_argument("--index", type=str, help="The index of the file to convert, default : (all structures in a file will be converted)", required = False, default = ":")
     parser.add_argument("--format", type=str, help="The output format. Is superseded by the output option. Default: extxyz", required = False, default = "extxyz")
     parser.set_defaults(func=main)
 
