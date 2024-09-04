@@ -11,6 +11,7 @@ def parse(subparser):
     parser.add_argument("--row", type=int, help="The line to average (first row has index 1), default 1", required = False, default = 1)
     parser.add_argument("--comment", type=str, help="The comment character, default #", required = False, default = "#")
     parser.add_argument("--skip", type=int, help="The number of entries to skip, default 0", required = False, default = 0)
+    # Set the function to be called when this command is used
     parser.set_defaults(func=main)
 
 def main(args):

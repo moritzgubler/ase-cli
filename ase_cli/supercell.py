@@ -7,6 +7,7 @@ def parse(subparser):
     parser.add_argument('filename', type=argparse.FileType('r'), help='The file to create a supercell of.')
     parser.add_argument('repeats', type=int, nargs=3, help='The number of repeats in each direction.')
     parser.add_argument('--output', type=str, help='The output file. Default: input file with _supercell appended.', required=False)
+    # Set the function to be called when this command is used
     parser.set_defaults(func=main)
 
 def main(args):

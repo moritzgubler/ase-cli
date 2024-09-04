@@ -10,6 +10,7 @@ def parse(subparser):
     parser.add_argument('--output', type=str, help='The output file. Default: input file with _rattled appended.', required=False)
     parser.add_argument('--seed', type=int, help='The seed for the random number generator.', required=False)
     parser.add_argument('--cell', action='store_true', help='Rattle the cell and the atoms.', required=False)
+    # Set the function to be called when this command is used
     parser.set_defaults(func=main)
 
 
